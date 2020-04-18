@@ -13,14 +13,13 @@ export default {
 </script>
 
 <style>
-  @import '~element-ui/lib/theme-default/base.css';
-
   html {
     height: 100%;
   }
 
   body {
-    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    background: url('https://source.unsplash.com/random/1400x800') center center;
+    background-size: cover;
   }
 
   #app {

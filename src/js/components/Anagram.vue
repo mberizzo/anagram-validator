@@ -1,32 +1,25 @@
 <template>
   <div>
-    <el-form :inline="true" v-if="showInitial">
+    <form v-if="showInitial">
       <h1>Write your text</h1>
-      <el-form-item>
-        <el-input id="init-text" placeholder="Jane Doe" v-model="initialText"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="saveInitial">Start</el-button>
-      </el-form-item>
-    </el-form>
+      <input class="form-control" placeholder="Jane Doe" v-model="initialText"></input>
+      <button class="btn btn-primary" @click="saveInitial">Start</button>
+    </form>
     <div v-else>
       <h1 class="anagram__initial" v-html="textStatus"></h1>
       <div>
-        <el-form :inline="true">
-          <el-form-item>
-            <el-input
-              ref="anagramInput"
-              type="success"
-              v-model="anagram"
-              @keyup.delete.native="switchCharStatus()"
-              @keydown.native="onCharInput($event)">
-            </el-input>
-          </el-form-item>
-        </el-form>
-
-        <el-button :type="btnColor" @click="onPlayAgain()">
+        <form>
+          <input
+            ref="anagramInput"
+            type="success"
+            v-model="anagram"
+            @keyup.delete="switchCharStatus()"
+            @keydown="onCharInput($event)">
+          </input>
+        </form>
+        <button class="btn" :class="`btn-${btnColor}`" @click="onPlayAgain()">
           Play Again
-        </el-button>
+        </button>
       </div>
     </div>
   </div>
@@ -75,7 +68,7 @@ export default {
       if (found) {
         found.isAvailable = false;
       } else {
-        this.beep();
+        // this.beep();
         e.preventDefault();
       }
     },
