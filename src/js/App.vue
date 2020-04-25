@@ -18,8 +18,7 @@ export default {
   }
 
   body {
-    background: url('https://source.unsplash.com/random/1400x800') center center;
-    background-size: cover;
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
   }
 
   #app {
